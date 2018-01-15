@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
+
 namespace FollowUp.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
@@ -20,6 +21,12 @@ namespace FollowUp.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Issue> Issues { get; set; }
+        public DbSet<ExtraInfo> ExtraInfo { get; set; }
+        //public DbSet<User> Users { get; set; }
+
+        
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
@@ -29,5 +36,7 @@ namespace FollowUp.Models
         {
             return new ApplicationDbContext();
         }
+
+        
     }
 }

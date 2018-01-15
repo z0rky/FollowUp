@@ -1,0 +1,90 @@
+﻿@using FollowUp.Models
+@model IEnumerable<FollowUp.Models.Issue>
+
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Issues</h2>
+
+<table id="issueTable" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            
+            
+            <th>Subject</th>
+            <th>Description</th>
+            <th>PriorityIssue</th>
+            <th>StartDateTime</th>
+            <th>State</th>
+            <th>Cancel</th>
+        </tr>
+    </thead>
+
+    @foreach (var issue in Model)
+    {
+        <tr>
+           
+            <td>@issue.Subject</td>
+            <td>@issue.Description</td>
+            <td>@issue.IssuePriority</td>
+            <td>@issue.StartDateTime</td>
+            <td>@issue.IssueState</td>
+            <td><button data-issue-id="@issue.Id" class="btn-link js-cancel">Cancel</button></td>
+          
+        </tr>
+    }
+
+</table>
+
+<input type="button" class="btn btn-primary" value="Ticket Toevoegen" onclick="location.href='@Url.Action("New", "Issues")'" />
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+            $("#issueTable").DataTable();
+
+            $("#issueTable").on("click",
+                ".js-cancel",
+                function() {
+                    var button = $(this);
+                    bootbox.confirm("Ben je zeker dat de geselecteerde Issue verwijderd mag worden?",
+                        function(result) {
+                            if (result) {
+                                $.ajax(
+                                    { //status naar canceled
+                                        type:"PUT",
+                                        url: "/api/issuess/" + button.attr("data-issue-id"),
+                                        
+                                        
+                                        succes: function() {
+                                            table.row(button.parents("tr")).remove();
+                                            console.log("succes");
+                                            // uit lijst gooien
+                                        }
+
+
+                                    });
+
+
+                            }
+
+                        });
+
+
+                });
+        });
+
+    </script>
+
+
+
+
+
+
+}
+
