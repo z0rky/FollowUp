@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FollowUp.ViewModels;
 
 namespace FollowUp.Controllers
 {
@@ -40,17 +41,17 @@ namespace FollowUp.Controllers
                     Administrator = User.IsInRole("Administrator")
                 }
                 ;
-            return PartialView( model);
+            return PartialView("_Navbar", model);
         }
 
     }
 
-    public class NavBarViewModel
-    {
-        public bool User { get; set; }
-        public bool Manager { get; set; }
-        public bool Solver { get; set; }
-        public bool Dispatcher { get; set; }
-        public bool Administrator { get; set; }
-    }
+    //public class NavBarViewModel
+    //{
+    //    public bool User { get; set; }
+    //    public bool Manager { get; set; }
+    //    public bool Solver { get; set; }
+    //    public bool Dispatcher { get; set; }
+    //    public bool Administrator { get; set; }
+    //}
 }

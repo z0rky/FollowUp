@@ -11,31 +11,8 @@
 </head>
 <body>
 
-
-
-    @Html.Partial("_NavBarUser");
-
-@if (User.IsInRole("Manager"))
-{
-    Html.Partial("_NavBarManager");
-}
-@if (User.IsInRole("Solver"))
-{
-    Html.Partial("_NavBarSolver");
-}
-@if (User.IsInRole("Dispatcher"))
-{
-    Html.Partial("_NavBarDispatcher");
-}
-@if (User.IsInRole("Administrator"))
-{
-    Html.Partial("_NavBarAdmin");
-}
-
-
-
-
-
+@{Html.RenderAction("Navbar","Home");}
+   
 
 <div class="container body-content">
     @RenderBody()
