@@ -97,6 +97,15 @@ namespace FollowUp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Are you sure that the issue can be removed?.
+        /// </summary>
+        public static string ConfirmCancel {
+            get {
+                return ResourceManager.GetString("ConfirmCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Description.
         /// </summary>
         public static string Description {

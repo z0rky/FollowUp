@@ -13,13 +13,11 @@
 <table id="issueTable" class="table table-bordered table-hover">
     <thead>
         <tr>
-            
-            
-            <th>Subject</th>
-            <th>Description</th>
-            <th>PriorityIssue</th>
-            <th>StartDateTime</th>
-            <th>State</th>
+            <th>@Html.DisplayNameFor(model => model.Subject)</th>
+            <th>@Html.DisplayNameFor(model => model.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.IssuePriority)</th>
+            <th>@Html.DisplayNameFor(model => model.StartDateTime)</th>
+            <th>@Html.DisplayNameFor(model => model.IssueState)</th>
             <th>Cancel</th>
         </tr>
     </thead>
@@ -52,7 +50,7 @@
                 ".js-cancel",
                 function() {
                     var button = $(this);
-                    bootbox.confirm("Ben je zeker dat de geselecteerde Issue verwijderd mag worden?",
+                    bootbox.confirm(@FollowUp.Resources.Resource.ConfirmCancel,
                         function(result) {
                             if (result) {
                                 $.ajax(

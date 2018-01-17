@@ -7,13 +7,13 @@ namespace FollowUp.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddColumnsToApplicationUser : IMigrationMetadata
+    public sealed partial class AddColumnsToUser : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddColumnsToApplicationUser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddColumnsToUser));
         
         string IMigrationMetadata.Id
         {
-            get { return "201801171546124_AddColumnsToApplicationUser"; }
+            get { return "201801171947147_AddColumnsToUser"; }
         }
         
         string IMigrationMetadata.Source

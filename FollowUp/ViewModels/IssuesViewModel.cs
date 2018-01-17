@@ -11,7 +11,5 @@ namespace FollowUp.ViewModels
 
         public IEnumerable<Issue> IssuesListUser;
 
-     
-
     }
 }

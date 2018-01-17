@@ -201,17 +201,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\IssuessController.cs" />
-    <Compile Include="Migrations\201801171546124_AddColumnsToApplicationUser.cs" />
-    <Compile Include="Migrations\201801171546124_AddColumnsToApplicationUser.Designer.cs">
-      <DependentUpon>201801171546124_AddColumnsToApplicationUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801171548208_Seeding.cs" />
-    <Compile Include="Migrations\201801171548208_Seeding.Designer.cs">
-      <DependentUpon>201801171548208_Seeding.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201801171551031_SeedingWithRoleNames.cs" />
-    <Compile Include="Migrations\201801171551031_SeedingWithRoleNames.Designer.cs">
-      <DependentUpon>201801171551031_SeedingWithRoleNames.cs</DependentUpon>
+    <Compile Include="Migrations\201801171947147_AddColumnsToUser.cs" />
+    <Compile Include="Migrations\201801171947147_AddColumnsToUser.Designer.cs">
+      <DependentUpon>201801171947147_AddColumnsToUser.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -572,14 +564,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801171546124_AddColumnsToApplicationUser.resx">
-      <DependentUpon>201801171546124_AddColumnsToApplicationUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801171548208_Seeding.resx">
-      <DependentUpon>201801171548208_Seeding.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201801171551031_SeedingWithRoleNames.resx">
-      <DependentUpon>201801171551031_SeedingWithRoleNames.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201801171947147_AddColumnsToUser.resx">
+      <DependentUpon>201801171947147_AddColumnsToUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.en.resx" />
     <EmbeddedResource Include="Resources\Resource.nl-BE.resx" />

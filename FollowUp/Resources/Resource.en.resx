@@ -129,6 +129,10 @@
   <data name="Code" xml:space="preserve">
     <value>Code</value>
   </data>
+  <data name="ConfirmCancel" xml:space="preserve">
+    <value>Are you sure that the issue can be removed?</value>
+    <comment>From IndexMyIssue</comment>
+  </data>
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>

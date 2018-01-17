@@ -7,6 +7,7 @@ namespace FollowUp.Migrations
     {
         public override void Up()
         {
+            //password is altijd Manager : Manager1234!, Solver : Solver1234!, ...
             Sql(@"INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'1fb89c06-0681-4504-a5fb-7d1f9edf54dd', N'Administrator')
 INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'a9033aeb-a902-4657-8077-197538934f9d', N'Dispatcher')
 INSERT INTO [dbo].[AspNetRoles] ([Id], [Name]) VALUES (N'5d80e606-6488-4b29-9364-04953dd15c72', N'Manager')
