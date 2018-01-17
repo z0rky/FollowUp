@@ -112,13 +112,6 @@ namespace FollowUp.Controllers
         {
             string currentUserId = User.Identity.GetUserId();
 
-            //var ZoekUsersOnderManager = (from a in _context.AspnetGebruiker
-            //    where a.ManagerId == currentUserId
-            //    select a).ToList();
-           
-            
-
-
                 var AllIssuesManager = (from b in _context.Issues
                 join u in _context.Users on b.AspNetUserId equals u.Id
                 where u.ManagerId==currentUserId
@@ -141,6 +134,13 @@ namespace FollowUp.Controllers
         public ActionResult IndexAllIssuesAdministrator()
         {
             throw new NotImplementedException();
+        }
+
+        public ActionResult CancelManager(int id)
+        {
+            var TeCancelen = _context.Issues.SingleOrDefault(c => c.Id == id);
+
+            return View("CancelManager", TeCancelen );
         }
     }
 }

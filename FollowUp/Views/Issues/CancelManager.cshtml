@@ -1,0 +1,29 @@
+﻿@model FollowUp.ViewModels.IssueFormViewModel
+
+@{
+    ViewBag.Title = "CancelManager";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CancelMassage</h2>
+
+
+@using (Html.BeginForm("Save", "Issues"))
+{
+    
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Issue.Description)
+        @Html.TextAreaFor(m => m.Issue.Description, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Issue.Description)
+    </div>
+
+
+   
+   
+
+
+    <button type="submit" class="btn btn-primary">Cancel</button>
+    <input type="button" class="btn btn-primary" value="Back"
+           onclick="location.href = '@Url.Action("IndexVerantwoordelijkPersonenManager", "Issues")'" />
+

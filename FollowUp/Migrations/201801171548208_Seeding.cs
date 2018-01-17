@@ -3,7 +3,7 @@ namespace FollowUp.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class SeedingRolesAndUsers : DbMigration
+    public partial class Seeding : DbMigration
     {
         public override void Up()
         {
