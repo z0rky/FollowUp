@@ -201,10 +201,6 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\IssuessController.cs" />
-    <Compile Include="Migrations\201801171947147_AddColumnsToUser.cs" />
-    <Compile Include="Migrations\201801171947147_AddColumnsToUser.Designer.cs">
-      <DependentUpon>201801171947147_AddColumnsToUser.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201801171952249_AddColumnCancelMessage.cs" />
     <Compile Include="Migrations\201801171952249_AddColumnCancelMessage.Designer.cs">
       <DependentUpon>201801171952249_AddColumnCancelMessage.cs</DependentUpon>
@@ -569,9 +565,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201801171947147_AddColumnsToUser.resx">
-      <DependentUpon>201801171947147_AddColumnsToUser.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801171952249_AddColumnCancelMessage.resx">
       <DependentUpon>201801171952249_AddColumnCancelMessage.cs</DependentUpon>
     </EmbeddedResource>
