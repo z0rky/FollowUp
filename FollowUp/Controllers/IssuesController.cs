@@ -14,8 +14,13 @@ using System.Net;
 
 namespace FollowUp.Controllers
 {
+
+
     public class IssuesController : Controller
-    {   
+    {
+        
+
+
         private ApplicationDbContext _context;
         
         public IssuesController()
@@ -30,10 +35,16 @@ namespace FollowUp.Controllers
 
         public ActionResult IndexMyIssues()
         {
-           
-             var IssuesListUser = _context.Issues;
+            string currentUserId = User.Identity.GetUserId();
+
+            var MyIssues = (from b in _context.Issues
+                where b.AspNetUserId == currentUserId
+                select b).ToList();
+
+
             
-            return View("indexMyIssues",IssuesListUser);
+            
+            return View("indexMyIssues",MyIssues);
         }
 
        
@@ -99,7 +110,22 @@ namespace FollowUp.Controllers
 
         public ActionResult IndexVerantwoordelijkPersonenManager()
         {
-            throw new NotImplementedException();
+            string currentUserId = User.Identity.GetUserId();
+
+            //var ZoekUsersOnderManager = (from a in _context.AspnetGebruiker
+            //    where a.ManagerId == currentUserId
+            //    select a).ToList();
+           
+            
+
+
+                var AllIssuesManager = (from b in _context.Issues
+                join u in _context.Users on b.AspNetUserId equals u.Id
+                where u.ManagerId==currentUserId
+                select new IssueVerantwoordelijkPersoonManager { Issue= b,Gerbuiker= u}).ToList();
+
+
+            return View("IndexVerantwoordelijkPersonenManager", AllIssuesManager);
         }
 
         public ActionResult IndexDispatcher()

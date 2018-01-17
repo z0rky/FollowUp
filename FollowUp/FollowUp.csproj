@@ -201,6 +201,18 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Api\IssuessController.cs" />
+    <Compile Include="Migrations\201801171546124_AddColumnsToApplicationUser.cs" />
+    <Compile Include="Migrations\201801171546124_AddColumnsToApplicationUser.Designer.cs">
+      <DependentUpon>201801171546124_AddColumnsToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801171548208_Seeding.cs" />
+    <Compile Include="Migrations\201801171548208_Seeding.Designer.cs">
+      <DependentUpon>201801171548208_Seeding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801171551031_SeedingWithRoleNames.cs" />
+    <Compile Include="Migrations\201801171551031_SeedingWithRoleNames.Designer.cs">
+      <DependentUpon>201801171551031_SeedingWithRoleNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -209,7 +221,6 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IssuesController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
-    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -233,6 +244,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\IssueFormViewModel.cs" />
     <Compile Include="ViewModels\IssuesViewModel.cs" />
+    <Compile Include="ViewModels\IssueVerantwoordelijkPersoonManager.cs" />
     <Compile Include="ViewModels\NavBarViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -539,6 +551,7 @@
     <Content Include="Views\Shared\_NavBarUser.cshtml" />
     <Content Include="Views\Issues\Details.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\Issues\IndexVerantwoordelijkPersonenManager.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -559,6 +572,15 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Migrations\201801171546124_AddColumnsToApplicationUser.resx">
+      <DependentUpon>201801171546124_AddColumnsToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801171548208_Seeding.resx">
+      <DependentUpon>201801171548208_Seeding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801171551031_SeedingWithRoleNames.resx">
+      <DependentUpon>201801171551031_SeedingWithRoleNames.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.en.resx" />
     <EmbeddedResource Include="Resources\Resource.nl-BE.resx" />
     <EmbeddedResource Include="Resources\Resource.resx">
