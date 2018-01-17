@@ -40,5 +40,7 @@ namespace FollowUp.Models
         [Display(Name = "AspNetUserId", ResourceType = typeof(Resources.Resource))]
         public string AspNetUserId { get; set; }
 
+        public String CancelMessage { get; set; }
+
     }
 }

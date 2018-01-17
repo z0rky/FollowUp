@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201801171551031_SeedingWithRoleNames.Designer.cs">
       <DependentUpon>201801171551031_SeedingWithRoleNames.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801171952249_AddColumnCancelMessage.cs" />
+    <Compile Include="Migrations\201801171952249_AddColumnCancelMessage.Designer.cs">
+      <DependentUpon>201801171952249_AddColumnCancelMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -552,6 +556,7 @@
     <Content Include="Views\Issues\Details.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Issues\IndexVerantwoordelijkPersonenManager.cshtml" />
+    <Content Include="Views\Issues\CancelManager.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -580,6 +585,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801171551031_SeedingWithRoleNames.resx">
       <DependentUpon>201801171551031_SeedingWithRoleNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801171952249_AddColumnCancelMessage.resx">
+      <DependentUpon>201801171952249_AddColumnCancelMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.en.resx" />
     <EmbeddedResource Include="Resources\Resource.nl-BE.resx" />
