@@ -13,13 +13,12 @@
 <table id="issueTable" class="table table-bordered table-hover">
     <thead>
         <tr>
-
-            <th>Email</th>
-            <th>Subject</th>
-            <th>Description</th>
-            <th>PriorityIssue</th>
-            <th>StartDateTime</th>
-            <th>State</th>
+            <th>@Html.DisplayNameFor(model => model.Gerbuiker.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.Subject)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.IssuePriority)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.StartDateTime)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.IssueState)</th>
             <th>Cancel</th>
         </tr>
     </thead>
@@ -34,7 +33,6 @@
             <td>@issue.Issue.StartDateTime</td>
             <td>@issue.Issue.IssueState</td>
             <td><button data-issue-id="@issue.Issue.Id" class="btn-link js-cancel">Cancel</button></td>
-
         </tr>
     }
 
@@ -66,24 +64,12 @@
                                             console.log("succes");
                                             // uit lijst gooien
                                         }
-
-
                                     });
-
-
                             }
-
                         });
-
 
                 });
         });
 
     </script>
-
-
-
-
-
-
 }

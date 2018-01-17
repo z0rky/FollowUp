@@ -79,6 +79,15 @@ namespace FollowUp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        public static string Back {
+            get {
+                return ResourceManager.GetString("Back", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Canceled.
         /// </summary>
         public static string Canceled {
@@ -255,6 +264,15 @@ namespace FollowUp.Resources {
         public static string PasswordConfirm {
             get {
                 return ResourceManager.GetString("PasswordConfirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Priority.
+        /// </summary>
+        public static string PriorityEnum {
+            get {
+                return ResourceManager.GetString("PriorityEnum", resourceCulture);
             }
         }
         

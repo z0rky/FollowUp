@@ -123,6 +123,9 @@
   <data name="AspNetUserId" xml:space="preserve">
     <value>Gebruiker</value>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Terug</value>
+  </data>
   <data name="Canceled" xml:space="preserve">
     <value>Geannuleerd</value>
   </data>
@@ -185,6 +188,10 @@
   </data>
   <data name="PasswordConfirm" xml:space="preserve">
     <value>Bevestig paswoord</value>
+  </data>
+  <data name="PriorityEnum" xml:space="preserve">
+    <value>Prioriteit</value>
+    <comment>For IssueFromViewModel</comment>
   </data>
   <data name="RegisterNew" xml:space="preserve">
     <value>Registreer een nieuwe gebruiker</value>

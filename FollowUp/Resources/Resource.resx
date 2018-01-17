@@ -124,6 +124,9 @@
     <value>User</value>
     <comment>From Issue</comment>
   </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
   <data name="Canceled" xml:space="preserve">
     <value>Canceled</value>
   </data>
@@ -188,6 +191,10 @@
   </data>
   <data name="PasswordConfirm" xml:space="preserve">
     <value>Confirm password</value>
+  </data>
+  <data name="PriorityEnum" xml:space="preserve">
+    <value>Priority</value>
+    <comment>For IssueFromViewModel</comment>
   </data>
   <data name="RegisterNew" xml:space="preserve">
     <value>Register as a new user</value>
