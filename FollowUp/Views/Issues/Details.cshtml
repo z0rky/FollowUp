@@ -55,3 +55,14 @@
 </div>
 
 <td>@Html.ActionLink(@FollowUp.Resources.Resource.AddInfo, "NewInfo", new { id = Model.Id })</td>
+
+<table id="issueTable" class="table table-bordered table-hover">
+
+    @foreach (var info in Model.IssueExtraInfo)
+    {
+        <tr>
+            <td>@info.DatumVraag</td>
+            <td>@info.Vraag</td>
+        </tr>
+    }
+</table>

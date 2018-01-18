@@ -29,6 +29,7 @@ namespace FollowUp.Migrations
                         Subject = c.String(nullable: false, maxLength: 255),
                         Description = c.String(nullable: false, maxLength: 255),
                         IssuePriority = c.Int(nullable: false),
+                        StartDateTime = c.DateTime(nullable: true),
                         IssueState = c.Int(nullable: false),
                         AspNetUserId = c.String(),
                     })

@@ -67,7 +67,6 @@ namespace FollowUp.Controllers
             }
             if (issue.Id == 0)
             {
-                
                 string currentUserId = User.Identity.GetUserId();
                 issue.AspNetUserId = currentUserId;
                 issue.IssueState = IssueState.Nieuw;
@@ -80,19 +79,22 @@ namespace FollowUp.Controllers
             {
                 var IssueInDb = _context.Issues.Single(c => c.Id == issue.Id);
                 IssueInDb.Description = issue.Description;
-                IssueInDb.StartDateTime = issue.StartDateTime;
+                IssueInDb.StartDateTime = DateTime.Today;
                 IssueInDb.IssueExtraInfo = issue.IssueExtraInfo;
                 IssueInDb.IssuePriority = issue.IssuePriority;
                 IssueInDb.Subject = issue.Subject;
-                
+                //voegt datum niet toe ?
 
-
+                //issue.AspNetUserId = User.Identity.GetUserId();
+                //issue.IssueState = IssueState.Nieuw;
+                //issue.StartDateTime = DateTime.Today;
+                //_context.Issues.Add(issue);
             }
             _context.SaveChanges();
             return RedirectToAction("IndexMyIssues", "Issues", issue);
         }
 
-        public ActionResult Details(int Id)
+        public ActionResult Details(int? Id)
         {
             var Issue = _context.Issues.SingleOrDefault(c => c.Id == Id);
 
