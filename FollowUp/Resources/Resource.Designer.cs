@@ -97,6 +97,15 @@ namespace FollowUp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancel message.
+        /// </summary>
+        public static string CancelManagerTitle {
+            get {
+                return ResourceManager.GetString("CancelManagerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Code.
         /// </summary>
         public static string Code {
@@ -174,6 +183,42 @@ namespace FollowUp.Resources {
         public static string InBehandeling {
             get {
                 return ResourceManager.GetString("InBehandeling", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date.
+        /// </summary>
+        public static string InfoDatumVraag {
+            get {
+                return ResourceManager.GetString("InfoDatumVraag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Issue id.
+        /// </summary>
+        public static string InfoIssue {
+            get {
+                return ResourceManager.GetString("InfoIssue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User.
+        /// </summary>
+        public static string InfoUser {
+            get {
+                return ResourceManager.GetString("InfoUser", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Question.
+        /// </summary>
+        public static string InfoVraag {
+            get {
+                return ResourceManager.GetString("InfoVraag", resourceCulture);
             }
         }
         

@@ -129,6 +129,9 @@
   <data name="Canceled" xml:space="preserve">
     <value>Geannuleerd</value>
   </data>
+  <data name="CancelManagerTitle" xml:space="preserve">
+    <value>Cancel message</value>
+  </data>
   <data name="Code" xml:space="preserve">
     <value>Code</value>
   </data>
@@ -210,5 +213,18 @@
   </data>
   <data name="Toegewezen" xml:space="preserve">
     <value>Toegewezen</value>
+  </data>
+  <data name="InfoDatumVraag" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="InfoIssue" xml:space="preserve">
+    <value>Issue id</value>
+  </data>
+  <data name="InfoUser" xml:space="preserve">
+    <value>Gebruiker</value>
+  </data>
+  <data name="InfoVraag" xml:space="preserve">
+    <value>Vraag</value>
+    <comment>From Extra info</comment>
   </data>
 </root>

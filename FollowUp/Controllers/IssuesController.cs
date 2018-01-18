@@ -128,7 +128,15 @@ namespace FollowUp.Controllers
 
         public ActionResult Solve()
         {
-            throw new NotImplementedException();
+            string currentUserId = User.Identity.GetUserId();
+
+            var AllIssuesAssigned = (from b in _context.Issues
+                                     join u in _context.Users on b.AspNetUserId equals u.Id
+                                     where b.AssignedToId == currentUserId
+                                     select new IssueVerantwoordelijkPersoonManager { Issue = b, Gerbuiker = u }).ToList();
+
+
+            return View("IndexVerantwoordelijkPersonenManager", AllIssuesAssigned);
         }
 
         public ActionResult IndexAllIssuesAdministrator()

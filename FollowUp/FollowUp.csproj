@@ -205,6 +205,10 @@
     <Compile Include="Migrations\201801171952249_AddColumnCancelMessage.Designer.cs">
       <DependentUpon>201801171952249_AddColumnCancelMessage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801181538485_AddColumnAssignedTo.cs" />
+    <Compile Include="Migrations\201801181538485_AddColumnAssignedTo.Designer.cs">
+      <DependentUpon>201801181538485_AddColumnAssignedTo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -567,6 +571,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201801171952249_AddColumnCancelMessage.resx">
       <DependentUpon>201801171952249_AddColumnCancelMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801181538485_AddColumnAssignedTo.resx">
+      <DependentUpon>201801181538485_AddColumnAssignedTo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.en.resx" />
     <EmbeddedResource Include="Resources\Resource.nl-BE.resx" />

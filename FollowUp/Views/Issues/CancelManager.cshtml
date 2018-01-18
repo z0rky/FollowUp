@@ -5,12 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>CancelMassage</h2>
+<h2>@FollowUp.Resources.Resource.CancelManagerTitle</h2>
 
 
 @using (Html.BeginForm("Save", "Issues"))
 {
-    
+
 
     <div class="form-group">
         @Html.LabelFor(m => m.Issue.Description)
@@ -19,11 +19,8 @@
     </div>
 
 
-   
-   
-
-
     <button type="submit" class="btn btn-primary">Cancel</button>
     <input type="button" class="btn btn-primary" value="@FollowUp.Resources.Resource.Back"
            onclick="location.href = '@Url.Action("IndexVerantwoordelijkPersonenManager", "Issues")'" />
 
+}
