@@ -1,15 +1,12 @@
 ﻿@model FollowUp.ViewModels.NavBarViewModel
 <div class="navbar-collapse collapse navbar-dark ">
-    @*"navbar-collapse collapse"*@
-    <ul class="nav navbar nav">
     
     @Html.ActionLink("Ticketing System", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
-@*</div>*@
         @if (Model.User || (Model.User!=true&& Model.Administrator!=true&&Model.Dispatcher!=true&&Model.Manager!=true&&Model.Solver!=true))
         {
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Issues", "IndexMyIssues", "Issues")</li>
+                    <li>@Html.ActionLink(@FollowUp.Resources.Resource.IssuesTitleMijn, "IndexMyIssues", "Issues")</li>
 
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -19,8 +16,8 @@
         {
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("My Issues", "IndexMyIssues", "Issues")</li>
-                    <li>@Html.ActionLink("All Issues", "IndexVerantwoordelijkPersonenManager", "Issues")</li>
+                    <li>@Html.ActionLink(@FollowUp.Resources.Resource.IssuesTitleMijn, "IndexMyIssues", "Issues")</li>
+                    <li>@Html.ActionLink(@FollowUp.Resources.Resource.IssuesTitleAll, "IndexVerantwoordelijkPersonenManager", "Issues")</li>
                 
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -32,8 +29,8 @@
         {
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("My Issues", "IndexMyIssues", "Issues")</li>
-                    <li>@Html.ActionLink("Issues", "IndexDispatcher", "Issues")</li>
+                    <li>@Html.ActionLink(@FollowUp.Resources.Resource.IssuesTitleMijn, "IndexMyIssues", "Issues")</li>
+                    <li>@Html.ActionLink(@FollowUp.Resources.Resource.IssuesTitleAssign, "IndexDispatcher", "Issues")</li>
 
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -45,8 +42,8 @@
         {
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Issues", "IndexMyIssues", "Issues")</li>
-                    <li>@Html.ActionLink("To Solve", "Solve", "Issues")</li>
+                    <li>@Html.ActionLink(@FollowUp.Resources.Resource.IssuesTitleMijn, "IndexMyIssues", "Issues")</li>
+                    <li>@Html.ActionLink(@FollowUp.Resources.Resource.IssuesTitleSolve, "Solve", "Issues")</li>
                 
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -64,8 +61,4 @@
                 @Html.Partial("_LoginPartial")
             </div>
         }
-</ul>
-    @*</div>
-</div>*@
-
-
+</div>

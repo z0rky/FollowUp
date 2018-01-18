@@ -120,7 +120,15 @@ namespace FollowUp.Controllers
 
         public ActionResult IndexDispatcher()
         {
-            throw new NotImplementedException();
+            string currentUserId = User.Identity.GetUserId();
+
+            var AllIssuesAssigned = (from b in _context.Issues
+                                     join u in _context.Users on b.AspNetUserId equals u.Id
+                                     where b.AssignedToId ==null
+                                     select new IssueVerantwoordelijkPersoonManager { Issue = b, Gerbuiker = u }).ToList();
+
+
+            return View("IndexWithDetail", AllIssuesAssigned);
         }
 
         public ActionResult Solve()

@@ -237,4 +237,20 @@
     <value>Informatie toevoegen</value>
     <comment>For Details (add info button)</comment>
   </data>
+  <data name="IssuesTitleAll" xml:space="preserve">
+    <value>Alle issues</value>
+    <comment>Voor navbar</comment>
+  </data>
+  <data name="IssuesTitleAssign" xml:space="preserve">
+    <value>Issues toe te wijzen</value>
+    <comment>Voor navbar</comment>
+  </data>
+  <data name="IssuesTitleMijn" xml:space="preserve">
+    <value>Mijn issues</value>
+    <comment>Voor navbar</comment>
+  </data>
+  <data name="IssuesTitleSolve" xml:space="preserve">
+    <value>Issue op te lossen</value>
+    <comment>Voor navbar</comment>
+  </data>
 </root>

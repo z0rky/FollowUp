@@ -277,6 +277,42 @@ namespace FollowUp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to All issues.
+        /// </summary>
+        public static string IssuesTitleAll {
+            get {
+                return ResourceManager.GetString("IssuesTitleAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Issues to Assign.
+        /// </summary>
+        public static string IssuesTitleAssign {
+            get {
+                return ResourceManager.GetString("IssuesTitleAssign", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My issues.
+        /// </summary>
+        public static string IssuesTitleMijn {
+            get {
+                return ResourceManager.GetString("IssuesTitleMijn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Issue to solve.
+        /// </summary>
+        public static string IssuesTitleSolve {
+            get {
+                return ResourceManager.GetString("IssuesTitleSolve", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use a local account to log  now.
         /// </summary>
         public static string LocalAccountLogin {

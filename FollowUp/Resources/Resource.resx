@@ -240,4 +240,20 @@
     <value>Add info</value>
     <comment>For Details (add info button)</comment>
   </data>
+  <data name="IssuesTitleAll" xml:space="preserve">
+    <value>All issues</value>
+    <comment>Voor navbar</comment>
+  </data>
+  <data name="IssuesTitleAssign" xml:space="preserve">
+    <value>Issues to Assign</value>
+    <comment>Voor navbar</comment>
+  </data>
+  <data name="IssuesTitleMijn" xml:space="preserve">
+    <value>My issues</value>
+    <comment>Voor navbar</comment>
+  </data>
+  <data name="IssuesTitleSolve" xml:space="preserve">
+    <value>Issue to solve</value>
+    <comment>Voor navbar</comment>
+  </data>
 </root>
