@@ -1,0 +1,39 @@
+﻿
+@using FollowUp.Models
+@model IEnumerable<FollowUp.ViewModels.IssueVerantwoordelijkPersoonManager>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Issues</h2>
+
+<table id="issueTable" class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Gerbuiker.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.Subject)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.Description)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.IssuePriority)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.StartDateTime)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.IssueState)</th>
+            <th>@FollowUp.Resources.Resource.Detail</th>
+        </tr>
+    </thead>
+
+    @foreach (var issue in Model)
+    {
+        <tr>
+            <td>@issue.Gerbuiker.Email</td>
+            <td>@issue.Issue.Subject</td>
+            <td>@issue.Issue.Description</td>
+            <td>@issue.Issue.IssuePriority</td>
+            <td>@issue.Issue.StartDateTime</td>
+            <td>@issue.Issue.IssueState</td>
+            <td>@Html.ActionLink(@FollowUp.Resources.Resource.Detail, "Details", new { id = issue.Issue.Id })</td>
+        </tr>
+    }
+
+</table>

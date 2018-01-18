@@ -1,0 +1,27 @@
+﻿@using FollowUp.Models
+@model FollowUp.Models.ExtraInfo
+
+@{
+    ViewBag.Title = @FollowUp.Resources.Resource.AddInfo;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@FollowUp.Resources.Resource.AddInfo</h2>
+
+@using (Html.BeginForm("SaveInfo", "Issues"))
+{
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.IssueId)
+        
+        <div class="form-group">
+            @Html.LabelFor(model => model.Vraag)
+            @Html.TextAreaFor(model => model.Vraag, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Vraag)
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <input type="button" class="btn btn-primary" value="@FollowUp.Resources.Resource.Back"
+               onclick="location.href = '@Url.Action("IndexMyIssues", "Issues")'" />
+    </div>
+ }

@@ -1,4 +1,5 @@
-﻿
+﻿@model FollowUp.Models.Issue
+
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -6,3 +7,51 @@
 
 <h2>Details</h2>
 
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssuePriority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssuePriority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IssueState)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IssueState)
+        </dd>
+
+    </dl>
+</div>
+
+<td>@Html.ActionLink(@FollowUp.Resources.Resource.AddInfo, "NewInfo", new { id = Model.Id })</td>

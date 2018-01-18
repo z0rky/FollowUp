@@ -18,7 +18,7 @@ namespace FollowUp.Models
         private DateTime datumVraag;
 
         [Display(Name = "InfoUser", ResourceType = typeof(Resources.Resource))]
-        public int UserId { get; set; }
+        public string UserId { get; set; }
 
         [Display(Name = "InfoIssue", ResourceType = typeof(Resources.Resource))]
         public int IssueId { get; set; }

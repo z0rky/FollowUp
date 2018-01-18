@@ -14,13 +14,8 @@ using System.Net;
 
 namespace FollowUp.Controllers
 {
-
-
     public class IssuesController : Controller
     {
-        
-
-
         private ApplicationDbContext _context;
         
         public IssuesController()
@@ -136,7 +131,7 @@ namespace FollowUp.Controllers
                                      select new IssueVerantwoordelijkPersoonManager { Issue = b, Gerbuiker = u }).ToList();
 
 
-            return View("IndexVerantwoordelijkPersonenManager", AllIssuesAssigned);
+            return View("IndexWithDetail", AllIssuesAssigned);
         }
 
         public ActionResult IndexAllIssuesAdministrator()
@@ -149,6 +144,32 @@ namespace FollowUp.Controllers
             var TeCancelen = _context.Issues.SingleOrDefault(c => c.Id == id);
 
             return View("CancelManager", TeCancelen );
+        }
+
+        public ActionResult NewInfo(int? id)
+        {
+            if (id == null) return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+
+            var viewModel = new ExtraInfo { Vraag = "Stel uw vraag", IssueId = (int) id };
+
+            return View("InfoForm", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult SaveInfo(ExtraInfo extraInfo)
+        {
+            if (!ModelState.IsValid) Redirect("IndexMyIssues");
+
+            if (extraInfo.IssueId == 0) Redirect("IndexMyIssues");
+            else
+            {
+                extraInfo.UserId = User.Identity.GetUserId();
+                extraInfo.DatumVraag = DateTime.Today;
+
+                _context.ExtraInfo.Add(extraInfo);
+            }
+            _context.SaveChanges();
+            return RedirectToAction("IndexMyIssues", "Issues", extraInfo);
         }
     }
 }

@@ -61,6 +61,15 @@ namespace FollowUp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add info.
+        /// </summary>
+        public static string AddInfo {
+            get {
+                return ResourceManager.GetString("AddInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Closed.
         /// </summary>
         public static string Afgesloten {
@@ -133,6 +142,15 @@ namespace FollowUp.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Detail.
+        /// </summary>
+        public static string Detail {
+            get {
+                return ResourceManager.GetString("Detail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Email {
@@ -165,6 +183,15 @@ namespace FollowUp.Resources {
         public static string High {
             get {
                 return ResourceManager.GetString("High", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home page.
+        /// </summary>
+        public static string HomePageTitle {
+            get {
+                return ResourceManager.GetString("HomePageTitle", resourceCulture);
             }
         }
         

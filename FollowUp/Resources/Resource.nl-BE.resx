@@ -227,4 +227,14 @@
     <value>Vraag</value>
     <comment>From Extra info</comment>
   </data>
+  <data name="HomePageTitle" xml:space="preserve">
+    <value>Begin pagina</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="AddInfo" xml:space="preserve">
+    <value>Informatie toevoegen</value>
+    <comment>For Details (add info button)</comment>
+  </data>
 </root>

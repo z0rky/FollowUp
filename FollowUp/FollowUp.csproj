@@ -209,6 +209,10 @@
     <Compile Include="Migrations\201801181538485_AddColumnAssignedTo.Designer.cs">
       <DependentUpon>201801181538485_AddColumnAssignedTo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801181958096_ExtraInfoUserIsString.cs" />
+    <Compile Include="Migrations\201801181958096_ExtraInfoUserIsString.Designer.cs">
+      <DependentUpon>201801181958096_ExtraInfoUserIsString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -549,6 +553,8 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Issues\IndexVerantwoordelijkPersonenManager.cshtml" />
     <Content Include="Views\Issues\CancelManager.cshtml" />
+    <Content Include="Views\Issues\IndexWithDetail.cshtml" />
+    <Content Include="Views\Issues\InfoForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -574,6 +580,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801181538485_AddColumnAssignedTo.resx">
       <DependentUpon>201801181538485_AddColumnAssignedTo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801181958096_ExtraInfoUserIsString.resx">
+      <DependentUpon>201801181958096_ExtraInfoUserIsString.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource.en.resx" />
     <EmbeddedResource Include="Resources\Resource.nl-BE.resx" />
