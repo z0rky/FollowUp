@@ -16,6 +16,10 @@ namespace FollowUp.Controllers
 {
     public class IssuesController : Controller
     {
+
+       
+
+
         private ApplicationDbContext _context;
         
         public IssuesController()
@@ -70,7 +74,6 @@ namespace FollowUp.Controllers
                 string currentUserId = User.Identity.GetUserId();
                 issue.AspNetUserId = currentUserId;
                 issue.IssueState = IssueState.Nieuw;
-               
                 issue.StartDateTime = DateTime.Today;
                 
                 _context.Issues.Add(issue);
@@ -180,9 +183,33 @@ namespace FollowUp.Controllers
 
         public ActionResult CancelManager(int id)
         {
+           
             var TeCancelen = _context.Issues.SingleOrDefault(c => c.Id == id);
+            Issue issue = new Issue();
+            issue = TeCancelen;
+            return View("CancelManager", issue );
+        }
 
-            return View("CancelManager", TeCancelen );
+        [HttpPost]
+        public ActionResult Cancel(Issue issue)
+        {   
+           var issueInDb = _context.Issues.Single(i => i.Id == issue.Id);
+            issueInDb.IssueState = IssueState.Canceled;
+            issueInDb.CancelMessage = issue.CancelMessage;
+            _context.SaveChanges();
+
+            string currentUserId = User.Identity.GetUserId();
+
+            var AllIssuesManager = (from b in _context.Issues
+                join u in _context.Users on b.AspNetUserId equals u.Id
+                where u.ManagerId == currentUserId
+                select new IssueVerantwoordelijkPersoonManager { Issue = b, Gerbuiker = u }).ToList();
+
+
+            return View("IndexVerantwoordelijkPersonenManager", AllIssuesManager);
+
+            
+
         }
 
         public ActionResult NewInfo(int? id)

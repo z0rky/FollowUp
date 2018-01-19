@@ -3,6 +3,7 @@
 @model IEnumerable<FollowUp.ViewModels.IssueVerantwoordelijkPersoonManager>
 
 
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -19,11 +20,12 @@
             <th>@Html.DisplayNameFor(model => model.Issue.IssuePriority)</th>
             <th>@Html.DisplayNameFor(model => model.Issue.StartDateTime)</th>
             <th>@Html.DisplayNameFor(model => model.Issue.IssueState)</th>
+            <th>@Html.DisplayNameFor(model => model.Issue.CancelMessage)</th>
             <th>Cancel</th>
         </tr>
     </thead>
 
-    @foreach (var issue in Model)
+    @foreach (var issue in  Model)
     {
         <tr>
             <td>@issue.Gerbuiker.Email</td>
@@ -32,7 +34,9 @@
             <td>@issue.Issue.IssuePriority</td>
             <td>@issue.Issue.StartDateTime</td>
             <td>@issue.Issue.IssueState</td>
-            <td><button data-issue-id="@issue.Issue.Id" class="btn-link js-cancel">Cancel</button></td>
+            <td>@issue.Issue.CancelMessage</td>
+            <td>@Html.ActionLink("cancel", "CancelManager", "Issues", new {id=issue.Issue.Id },null)
+
         </tr>
     }
 
@@ -43,33 +47,31 @@
 @section scripts
 {
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             $("#issueTable").DataTable();
 
             $("#issueTable").on("click",
                 ".js-cancel",
-                function() {
+                function () {
                     var button = $(this);
                     bootbox.confirm("Ben je zeker dat de geselecteerde Issue verwijderd mag worden?",
-                        function(result) {
+                        function (result) {
                             if (result) {
                                 $.ajax(
-                                    { //status naar canceled
-                                        type:"PUT",
+                                    {
+                                        type: "PUT",
                                         url: "/api/issuess/" + button.attr("data-issue-id"),
 
-
-                                        succes: function() {
+                                        succes: function () {
                                             table.row(button.parents("tr")).remove();
+
                                             console.log("succes");
                                             // uit lijst gooien
                                         }
                                     });
                             }
                         });
-
                 });
         });
-
-    </script>
+</script>
 }

@@ -1,4 +1,5 @@
-﻿@model FollowUp.ViewModels.IssueFormViewModel
+﻿@using FollowUp.Models
+@model FollowUp.Models.Issue
 
 @{
     ViewBag.Title = "CancelManager";
@@ -8,19 +9,24 @@
 <h2>@FollowUp.Resources.Resource.CancelManagerTitle</h2>
 
 
-@using (Html.BeginForm("Save", "Issues"))
-{
-
-
+@using (Html.BeginForm("Cancel","Issues"))
+{   
+    
+  
     <div class="form-group">
-        @Html.LabelFor(m => m.Issue.Description)
-        @Html.TextAreaFor(m => m.Issue.Description, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m => m.Issue.Description)
+        @Html.HiddenFor(model =>model.Id);    
+        @Html.TextAreaFor(m => m.CancelMessage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.CancelMessage)
     </div>
 
+<button type="submit" class="btn btn-primary">Cancel</button>
 
-    <button type="submit" class="btn btn-primary">Cancel</button>
+    
     <input type="button" class="btn btn-primary" value="@FollowUp.Resources.Resource.Back"
            onclick="location.href = '@Url.Action("IndexVerantwoordelijkPersonenManager", "Issues")'" />
+} 
 
-}
+
+
+   
+
