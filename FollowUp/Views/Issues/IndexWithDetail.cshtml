@@ -2,7 +2,6 @@
 @using FollowUp.Models
 @model IEnumerable<FollowUp.ViewModels.IssueVerantwoordelijkPersoonManager>
 
-
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -20,20 +19,29 @@
             <th>@Html.DisplayNameFor(model => model.Issue.StartDateTime)</th>
             <th>@Html.DisplayNameFor(model => model.Issue.IssueState)</th>
             <th>@FollowUp.Resources.Resource.Detail</th>
+            @if (User.IsInRole("Dispatcher"))
+            {
+                <th>@FollowUp.Resources.Resource.IssuesTitleAssign</th>
+            }
         </tr>
     </thead>
 
     @foreach (var issue in Model)
     {
-        <tr>
-            <td>@issue.Gerbuiker.Email</td>
-            <td>@issue.Issue.Subject</td>
-            <td>@issue.Issue.Description</td>
-            <td>@issue.Issue.IssuePriority</td>
-            <td>@issue.Issue.StartDateTime</td>
-            <td>@issue.Issue.IssueState</td>
-            <td>@Html.ActionLink(@FollowUp.Resources.Resource.Detail, "Details", new { id = issue.Issue.Id })</td>
-        </tr>
+    <tr>
+        <td>@issue.Gerbuiker.Email</td>
+        <td>@issue.Issue.Subject</td>
+        <td>@issue.Issue.Description</td>
+        <td>@issue.Issue.IssuePriority</td>
+        <td>@issue.Issue.StartDateTime</td>
+        <td>@issue.Issue.IssueState</td>
+        <td>@Html.ActionLink(@FollowUp.Resources.Resource.Detail, "Details", new { id = issue.Issue.Id })</td>
+        @if (User.IsInRole("Dispatcher"))
+         {
+            <td>@Html.ActionLink(@FollowUp.Resources.Resource.IssuesTitleAssign, "Assign", new { id = issue.Issue.Id })</td>
+  
+         }
+    </tr>
     }
 
 </table>

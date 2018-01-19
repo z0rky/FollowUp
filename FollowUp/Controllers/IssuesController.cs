@@ -105,6 +105,35 @@ namespace FollowUp.Controllers
             return View("Details", Issue);
         }
 
+        public ActionResult Assign(int? Id)
+        {
+            var Issue = _context.Issues.SingleOrDefault(c => c.Id == Id);
+            if (Issue == null) return HttpNotFound();
+
+            var solveUsers = (from u in _context.Users
+                             // where u.RoleName == "Solver"
+                              select new Gebruiker { Id = u.Id, Email = u.Email }).ToList();
+            var model = new IssuesAssignModel
+            {
+                Issue = Issue,
+                SolveUsers = solveUsers
+            };
+
+            return View("Assign", model);
+        }
+
+        [HttpPost]
+        public ActionResult AssignSave(IssuesAssignModel IssuesAssignModel)
+        {
+            if (IssuesAssignModel == null) Redirect("IndexDispatcher");
+
+            var Issue = _context.Issues.SingleOrDefault(c => c.Id == IssuesAssignModel.Issue.Id);
+            Issue.AssignedToId = IssuesAssignModel.Issue.AssignedToId;
+
+            _context.SaveChanges();
+            return RedirectToAction("IndexDispatcher", "Issues");
+        }
+
         public ActionResult IndexVerantwoordelijkPersonenManager()
         {
             string currentUserId = User.Identity.GetUserId();

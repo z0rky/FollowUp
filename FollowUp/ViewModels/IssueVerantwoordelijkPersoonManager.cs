@@ -21,6 +21,5 @@ namespace FollowUp.ViewModels
         //public IEnumerable<ApplicationUser>  Gerbuiker { get; set; }
         public Issue Issue { get; set; }
         public ApplicationUser Gerbuiker { get; set; }
-
     }
 }
