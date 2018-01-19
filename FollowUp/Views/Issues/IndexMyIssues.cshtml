@@ -50,7 +50,7 @@
                 ".js-cancel",
                 function() {
                     var button = $(this);
-                    bootbox.confirm(@FollowUp.Resources.Resource.ConfirmCancel,
+                    bootbox.confirm(@*@FollowUp.Resources.Resource.ConfirmCancel*@"Zeker?",
                         function(result) {
                             if (result) {
                                 $.ajax(
