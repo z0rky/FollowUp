@@ -16,12 +16,10 @@ namespace FollowUp.Controllers
 {
     public class IssuesController : Controller
     {
-<<<<<<< Updated upstream
-=======
 
        
 
->>>>>>> Stashed changes
+
         private ApplicationDbContext _context;
         
         public IssuesController()
