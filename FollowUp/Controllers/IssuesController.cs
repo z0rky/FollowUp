@@ -74,7 +74,7 @@ namespace FollowUp.Controllers
                 string currentUserId = User.Identity.GetUserId();
                 issue.AspNetUserId = currentUserId;
                 issue.IssueState = IssueState.Nieuw;
-                issue.StartDateTime = DateTime.Today;
+                issue.StartDateTime = DateTime.Now;
                 
                 _context.Issues.Add(issue);
             }
@@ -82,7 +82,10 @@ namespace FollowUp.Controllers
             {
                 var IssueInDb = _context.Issues.Single(c => c.Id == issue.Id);
                 IssueInDb.Description = issue.Description;
-                IssueInDb.StartDateTime = DateTime.Today;
+                DateTime datum = DateTime.Today;
+                //IssueInDb.StartDateTime = DateTime.Today;
+                string dateString = datum.ToShortDateString();
+                IssueInDb.StartDateTime = DateTime.Parse(dateString);
                 IssueInDb.IssueExtraInfo = issue.IssueExtraInfo;
                 IssueInDb.IssuePriority = issue.IssuePriority;
                 IssueInDb.Subject = issue.Subject;
