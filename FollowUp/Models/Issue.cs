@@ -29,7 +29,7 @@ namespace FollowUp.Models
         //public Priority PriorityIssue { get; set; }
 
         [Display(Name = "StartDateTime", ResourceType = typeof(Resources.Resource))]
-        public DateTime StartDateTime;
+        public DateTime StartDateTime { set; get; }
 
         [Display(Name = "IssueState", ResourceType = typeof(Resources.Resource))]
         public IssueState IssueState { get; set; }
